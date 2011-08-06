@@ -1,0 +1,15 @@
+import java.io.*;
+import java.net.*;
+public class ChatServer {
+  public static void main(String[] args) throws Exception{
+    ChatServer myServ = new ChatServer();
+    myServ.run();
+  }
+  public void run() throws Exception{
+    ServerSocket mySS = new ServerSocket(9999);
+    Socket SS_accept = mySS.accept();
+    BufferedReader SS_BF = new BufferedReader(new InputStreamReader(SS_accept.getInputStream()));
+    String temp = SS_BF.readLine();
+    System.out.println(temp);
+  }
+}
